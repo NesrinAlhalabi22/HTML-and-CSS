@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesrin Alhalabi | Creative Portfolio</title>
+    <style>
+        /* --- General Styling --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* --- Fixed Navbar --- */
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(10, 10, 10, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #00cec9;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 16px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #00cec9;
+            color: #000;
+        }
+
+        /* --- Video Hero with Text Overlay --- */
+        .video-container {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+        .video-overlay-text {
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+        .video-overlay-text h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Two Column Layout --- */
+        .content { padding: 60px 20px; max-width: 1100px; margin: auto; }
+        .two-column {
+            display: flex;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .column {
+            flex: 1;
+            height: 350px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #00cec9; /* Font Color */
+        }
+        .column p { color: #fff; margin-top: 15px; }
+
+        /* --- Image Styling (Filter, Rounded, Overlay) --- */
+        .img-container {
+            text-align: center;
+            position: relative;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+        .portfolio-img {
+            width: 100%;
+            border-radius: 30px; /* Rounded Edges */
+            filter: grayscale(40%) contrast(120%); /* CSS Filter */
+            display: block;
+            border: 5px solid #00cec9;
+        }
+        .overlay {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #00cec9;
+            border-radius: 25px;
+        }
+        .img-container:hover .overlay { opacity: 0.85; }
+        .overlay-text {
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 100%;
+            margin: 50px 0;
+            border-collapse: collapse;
+            border: 2px solid #00cec9; /* Border */
+            background: rgba(0,0,0,0.3);
+        }
+        th, td {
+            padding: 20px; /* Padding */
+            border: 1px solid rgba(0, 206, 201, 0.3);
+            text-align: center;
+        }
+        tr:first-child {
+            background-color: #00cec9; /* Top Row BG */
+            color: #000;
+        }
+
+        /* --- Paragraph Hover --- */
+        .hover-para {
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: all 0.4s;
+        }
+        .hover-para:hover {
+            background: #00cec9;
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #000;
+            padding: 30px;
+            text-align: center; /* Centered */
+            font-weight: bold; /* Bold */
+            border-top: 2px solid #00cec9;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <header class="video-container" id="home">
+        <video autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-code-running-on-a-computer-screen-2422-large.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay-text">
+            <h1>Nesrin Alhalabi</h1>
+            <p style="font-size: 1.5rem; color: #00cec9;">Full-Stack Developer & Designer</p>
+        </div>
+    </header>
+
+    <div class="content" id="about">
+        
+        <div class="two-column">
+            <div class="column">
+                <h3>Unique Vision</h3>
+                <p>Building high-performance web applications with a focus on user experience and modern aesthetics. Nesrin brings a student's curiosity with a professional's precision.</p>
+            </div>
+            <div class="column">
+                <h3>Technical Skills</h3>
+                <p>Expertise in HTML5, CSS3, Bootstrap 5, and JavaScript. Specialized in creating responsive layouts and interactive data visualizations.</p>
+            </div>
+        </div>
+
+        <div class="img-container">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/7968818042094921704_0" alt="Creative Workspace" class="portfolio-img">
+            <div class="overlay">
+                <div class="overlay-text">NESRIN'S WORKSPACE</div>
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <td>Coursework</td>
+                <td>Level</td>
+                <td>Focus</td>
+            </tr>
+            <tr>
+                <td>Web Development I</td>
+                <td>Advanced</td>
+                <td>HTML/CSS/Bootstrap</td>
+            </tr>
+            <tr>
+                <td>UI/UX Design</td>
+                <td>Intermediate</td>
+                <td>Responsive Layouts</td>
+            </tr>
+        </table>
+
+        <p class="hover-para">
+            This project represents the culmination of web development fundamentals. By combining raw CSS power with the Bootstrap framework, Nesrin Alhalabi demonstrates the ability to build scalable, beautiful, and functional websites for any industry.
+        </p>
+
+    </div>
+
+    <footer>
+        DESIGNED BY NESRIN ALHALABI &copy; 2024
+    </footer>
+
+</body>
+</html>
